@@ -1,0 +1,16 @@
+<!-- ===== Paste inside the Bulk Enquiry form, just above the "Send Enquiry" button ===== -->
+<div class="consent-block">
+  <label class="consent-label">
+    <input type="checkbox" name="marketing_consent" value="yes" id="marketing_consent">
+    <span>I agree to receive product updates, offers and enquiry follow-ups from PS Steel on WhatsApp, SMS, phone and email. I can opt out anytime. See <a href="/opt-in/" target="_blank" rel="noopener">Communication Consent</a>.</span>
+  </label>
+  <p class="consent-note">By sending this enquiry you also agree to our <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and <a href="/terms/" target="_blank" rel="noopener">Terms &amp; Conditions</a>.</p>
+</div>
+<style>
+.consent-block{margin:14px 0}
+.consent-label{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.5;cursor:pointer}
+.consent-label input{margin-top:4px;width:18px;height:18px;flex:none}
+.consent-note{font-size:13px;opacity:.8;margin:8px 0 0}
+</style>
+<!-- IMPORTANT: keep the checkbox UNTICKED by default, and save 'marketing_consent' (yes/no) + timestamp with every enquiry as proof of consent. -->
+<!-- Backend tip: store consent as a boolean field with a datetime, e.g. marketing_consent = models.BooleanField(default=False); consent_at = models.DateTimeField(null=True, blank=True) -->

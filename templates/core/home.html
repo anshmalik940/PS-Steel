@@ -1,0 +1,261 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ site.company_name }} | Stainless Steel Containers &amp; Bowls Manufacturer{% endblock %}
+{% block meta_description %}{{ site.company_name }} manufactures stainless steel containers and bowls in Delhi and supplies them in bulk to wholesalers, distributors and resellers across India.{% endblock %}
+
+{% block content %}
+
+{# --- HERO SECTION --- #}
+{# --- HERO SECTION --- #}
+{# --- HERO SECTION --- #}
+<section class="relative bg-brand-800 text-white overflow-hidden min-h-0 lg:min-h-[620px] flex items-center">
+  <!-- Desktop Absolute Background Photo Bleed (Expanded width & anchored to right) -->
+  <div class="hidden lg:block absolute top-0 right-0 bottom-0 w-[64%] xl:w-[60%] z-0">
+    {% if site.hero_image %}
+      <img src="{{ site.hero_image.url }}" alt="{{ site.company_name }}" class="w-full h-full object-cover object-right" fetchpriority="high">
+    {% else %}
+      <img src="{% static 'img/hero-container.jpg' %}" alt="Stainless steel container" class="w-full h-full object-cover object-right" fetchpriority="high">
+    {% endif %}
+    <!-- Left-side dark gradient to blend smoothly into the text content -->
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-800 via-brand-800/50 to-transparent pointer-events-none"></div>
+  </div>
+
+  <div class="w-full max-w-[1200px] mx-auto px-5 sm:px-6 py-8 sm:py-10 lg:py-16 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+      
+      <!-- Left / Main Copy -->
+      <div class="lg:col-span-6 max-w-xl">
+        <p class="text-copper text-[0.68rem] sm:text-xs tracking-[0.24em] uppercase font-extrabold mb-2.5 sm:mb-4">
+          {{ site.hero_tagline }}
+        </p>
+
+        <h1 class="text-white text-2xl sm:text-4xl lg:text-5xl font-extrabold uppercase leading-[1.08] tracking-tight mb-3 sm:mb-5">
+          {{ site.hero_title }} <span class="text-copper block mt-0.5 sm:mt-1">{{ site.hero_title_highlight }}</span>
+        </h1>
+
+        <!-- Mobile-Only Compact Product Feature Card -->
+        <div class="block lg:hidden my-4 relative rounded-xl overflow-hidden border border-line-dark shadow-xl bg-brand-900/60 aspect-[16/9] max-h-52">
+          {% if site.hero_image %}
+            <img src="{{ site.hero_image.url }}" alt="{{ site.company_name }}" class="w-full h-full object-cover object-right" fetchpriority="high">
+          {% else %}
+            <img src="{% static 'img/hero-container.jpg' %}" alt="Stainless steel container" class="w-full h-full object-cover object-right" fetchpriority="high">
+          {% endif %}
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-900/80 via-transparent to-transparent"></div>
+          <span class="absolute bottom-2.5 right-3 font-script text-copper text-lg pointer-events-none opacity-90">Steel for Living</span>
+        </div>
+
+        <p class="text-white/75 text-xs sm:text-base leading-relaxed mb-5 sm:mb-8 max-w-[42ch]">
+          {{ site.hero_subtitle }}
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-row items-center gap-2.5 sm:gap-3 mb-6 sm:mb-10">
+          <button type="button" class="btn btn-primary js-open-modal text-xs sm:text-sm px-3.5 py-2.5 sm:px-5 sm:py-3 flex-1 sm:flex-none justify-center whitespace-nowrap">
+            Bulk Order
+          </button>
+          <a class="btn btn-light text-xs sm:text-sm px-3.5 py-2.5 sm:px-5 sm:py-3 flex-1 sm:flex-none justify-center whitespace-nowrap" href="{% url 'product_list' %}">
+            View Products
+          </a>
+        </div>
+
+        <!-- Hero Badges -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-line-dark">
+          <div class="flex items-center sm:items-start gap-2.5 sm:gap-0 sm:flex-col text-[0.72rem] sm:text-xs font-bold leading-tight text-white/90">
+            <svg class="w-5 h-5 sm:w-7 sm:h-7 text-copper sm:mb-2 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20"/><path d="m12 21 4-12-2-6"/><path d="m12 21-4-12 2-6"/>
+            </svg>
+            <span>Premium<br class="hidden sm:inline"> Quality</span>
+          </div>
+
+          <div class="flex items-center sm:items-start gap-2.5 sm:gap-0 sm:flex-col text-[0.72rem] sm:text-xs font-bold leading-tight text-white/90">
+            <svg class="w-5 h-5 sm:w-7 sm:h-7 text-copper sm:mb-2 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
+            </svg>
+            <span>Long<br class="hidden sm:inline"> Lasting</span>
+          </div>
+
+          <div class="flex items-center sm:items-start gap-2.5 sm:gap-0 sm:flex-col text-[0.72rem] sm:text-xs font-bold leading-tight text-white/90">
+            <svg class="w-5 h-5 sm:w-7 sm:h-7 text-copper sm:mb-2 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M1 3h13v13H1z"/><path d="M14 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/>
+            </svg>
+            <span>Pan India<br class="hidden sm:inline"> Supply</span>
+          </div>
+
+          <div class="flex items-center sm:items-start gap-2.5 sm:gap-0 sm:flex-col text-[0.72rem] sm:text-xs font-bold leading-tight text-white/90">
+            <svg class="w-5 h-5 sm:w-7 sm:h-7 text-copper sm:mb-2 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <span>Reseller<br class="hidden sm:inline"> Focused</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Decorative Script & Side Text -->
+  <div class="hidden xl:block absolute top-1/2 right-6 -translate-y-1/2 text-right text-[0.68rem] tracking-[0.24em] uppercase font-bold text-white/75 leading-loose pointer-events-none z-10">
+    <span class="block w-8 h-[1px] bg-copper ml-auto mb-2"></span>
+    Durable<br>Elegant<br>Reliable<br>Always
+  </div>
+  <p class="hidden lg:block absolute right-6 bottom-6 text-right font-script text-2xl text-white/90 pointer-events-none z-10">
+    Steel<br>For Better<br>Living
+  </p>
+</section>
+
+{# --- PRODUCTS SECTION --- #}
+<section class="py-16 lg:py-20 bg-cream">
+  <div class="w-full max-w-[1200px] mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-end mb-10">
+      <div>
+        <span class="eyebrow">Our Products</span>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-ink">Simple Products.<br>Stronger Businesses.</h2>
+      </div>
+      <p class="text-l sm:text-base text-muted max-w-lg mb-1">
+        High quality stainless steel houseware designed for everyday use. Available in multiple sizes for bulk orders.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+      {% for p in featured_products %}
+      <article class="relative grid grid-cols-1 sm:grid-cols-2 bg-white rounded-lg border border-line overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <a class="block bg-[#eae6df] h-52 sm:h-full overflow-hidden" href="{{ p.get_absolute_url }}">
+          <img src="{{ p.image.url }}" alt="{{ p.title }}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
+        </a>
+        <div class="p-6 flex flex-col justify-between">
+          <div>
+            <h3 class="text-base font-bold text-ink mb-2">{{ p.title }}</h3>
+            <p class="text-xs sm:text-sm text-muted line-clamp-3 mb-4 leading-relaxed">{{ p.short_description }}</p>
+          </div>
+          <a class="card-link inline-flex items-center text-xs font-bold text-ink hover:text-copper-600 transition-colors" href="{{ p.get_absolute_url }}">
+            View Details &rarr;
+          </a>
+        </div>
+        <span class="card-num">{{ forloop.counter|stringformat:"02d" }}</span>
+      </article>
+      {% empty %}
+        <p class="text-muted">No featured products yet. Tick “Featured” in Django admin.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# --- RESELLERS / DISTRIBUTORS BAND --- #}
+<section class="py-14 lg:py-16 bg-brand-800 text-white">
+  <div class="w-full max-w-[1200px] mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="lg:col-span-5">
+        <span class="text-copper text-xs tracking-[0.22em] uppercase font-extrabold mb-3 block">For Resellers &amp; Distributors</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white mb-4 leading-tight">
+          Let's Grow <span class="text-copper block">Together</span>
+        </h2>
+        <p class="text-white/75 text-l leading-relaxed mb-6">
+          We supply premium stainless steel products across India with consistent quality, competitive pricing and long-term business opportunities.
+        </p>
+        <a class="btn btn-light text-xs sm:text-sm" href="{% url 'resellers' %}">Become a Reseller</a>
+      </div>
+
+      <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-6">
+        <div class="border-l border-line-dark pl-4 flex flex-col items-start">
+          <svg class="w-7 h-7 text-copper mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            <path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/>
+          </svg>
+          <span class="text-s font-bold leading-snug">Bulk Orders by Weight</span>
+          <small class="text-[0.80rem] text-white/50 mt-1 block">20 kg &middot; 50 kg &middot; 100 kg</small>
+        </div>
+        <div class="border-l border-line-dark pl-4 flex flex-col items-start">
+          <svg class="w-7 h-7 text-copper mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span class="text-s font-bold leading-snug">For Resellers &amp; Wholesalers</span>
+        </div>
+        <div class="border-l border-line-dark pl-4 flex flex-col items-start">
+          <svg class="w-7 h-7 text-copper mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span class="text-s font-bold leading-snug">Pan India Delivery</span>
+        </div>
+        <div class="border-l border-line-dark pl-4 flex flex-col items-start">
+          <svg class="w-7 h-7 text-copper mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r=/"3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+          <span class="text-s font-bold leading-snug">Customized Supply</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# --- WHY CHOOSE (SPLIT) --- #}
+<section id="why-us" class="grid grid-cols-1 lg:grid-cols-12 min-h-[460px] bg-cream">
+  <!-- Left Column: Aligned with the site container grid -->
+  <div class="lg:col-span-7 py-14 sm:py-16 flex flex-col justify-center px-6 sm:px-8 lg:pr-12 lg:pl-[max(1.5rem,calc((100vw-1200px)/2+1.5rem))]">
+    <div class="max-w-xl w-full">
+      <span class="eyebrow mb-2">Why Choose</span>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink uppercase tracking-tight mb-4">
+        {{ site.company_name }}
+      </h2>
+      <p class="text-muted text-l  sm:text-sm leading-relaxed mb-8 max-w-lg">
+        We combine direct in-house manufacturing with strict quality checks, fair pricing by weight, and responsive communication to help your distribution and retail businesses succeed.
+      </p>
+
+      <!-- 4-Item Horizontal Feature Grid Matching Mockup -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="pt-3 border-t-2 border-line hover:border-copper-600 transition-colors">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7 text-copper-600 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/>
+          </svg>
+          <p class="text-s font-bold text-ink">Consistent Quality</p>
+        </div>
+
+        <div class="pt-3 border-t-2 border-line hover:border-copper-600 transition-colors">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7 text-copper-600 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 4h12"/><path d="M6 8h12"/><path d="M14 8a4 4 0 0 1-4 4H6l8 8"/>
+          </svg>
+          <p class="text-s font-bold text-ink">Competitive Pricing</p>
+        </div>
+
+        <div class="pt-3 border-t-2 border-line hover:border-copper-600 transition-colors">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7 text-copper-600 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          <p class="text-s font-bold text-ink">Reliable Partnerships</p>
+        </div>
+
+        <div class="pt-3 border-t-2 border-line hover:border-copper-600 transition-colors">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7 text-copper-600 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 21h18"/><rect x="4" y="12" width="4" height="7"/><rect x="10" y="8" width="4" height="11"/><rect x="16" y="4" width="4" height="15"/>
+          </svg>
+          <p class="text-s font-bold text-ink">Long-Term Growth</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Column: Image Bleed -->
+  <div class="lg:col-span-5 relative min-h-[300px] flex items-center justify-start overflow-hidden">
+    <img src="{% static 'img/Industrial Stainless Steelware Display.png' %}" alt="Stainless steel containers" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-900/90 via-brand-900/50 to-transparent"></div>
+    <div class="relative z-10 p-8 sm:p-12 text-white">
+      <div class="w-10 h-0.5 bg-copper mb-4"></div>
+      <h3 class="text-2xl sm:text-3xl font-extrabold uppercase leading-tight mb-2">More<br>Than<br>Steel</h3>
+      <p class="text-[0.76rem] tracking-widest uppercase font-bold text-white/90">A partner in your growth</p>
+    </div>
+  </div>
+</section>
+
+{# --- BOTTOM CALL TO ACTION --- #}
+<section class="cta-band bg-brand-700 py-10 text-white">
+  <div class="w-full max-w-[1200px] mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+    <div>
+      <h2 class="text-xl sm:text-2xl font-bold mb-1 text-white">Ready to Place a Bulk Order?</h2>
+      <p class="text-m sm:text-sm text-white/70">Get in touch with our team for product details, pricing and supply options.</p>
+    </div>
+    <button type="button" class="btn btn-light whitespace-nowrap js-open-modal">Enquire Now</button>
+  </div>
+</section>
+
+{% endblock %}

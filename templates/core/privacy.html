@@ -1,0 +1,239 @@
+{% extends "base.html" %}
+{% block title %}Privacy Policy | {{ site.company_name }}{% endblock %}
+{% block meta_description %}Privacy Policy of {{ site.company_name }}, stainless steel houseware manufacturer and supplier.{% endblock %}
+
+{% block content %}
+{# --- PAGE HERO HEADER --- #}
+<section class="relative overflow-hidden bg-gradient-to-br from-brand-800 to-brand-900 text-white py-14 md:py-20 border-b border-white/10">
+  <div class="pointer-events-none absolute -right-20 -bottom-28 w-80 h-80 rounded-full border border-copper/15 hidden md:block"></div>
+  <div class="pointer-events-none absolute right-16 top-10 w-44 h-44 rounded-full bg-copper/10 blur-3xl"></div>
+
+  <div class="w-full max-w-[1200px] mx-auto px-6 relative z-10">
+    <p class="text-copper text-xs tracking-[0.24em] uppercase font-extrabold mb-3">Legal</p>
+    <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[1.08] mb-3">
+      Privacy <span class="text-copper">Policy</span>
+    </h1>
+    <p class="text-white/75 text-xs sm:text-sm">
+      How we handle your personal data &middot; Last updated: 29 September 2026
+    </p>
+  </div>
+</section>
+
+{# --- POLICY CONTENT CONTAINER --- #}
+<section class="py-12 md:py-16 bg-[#f7f8f6]">
+  <div class="w-full max-w-[880px] mx-auto px-6">
+    <div class="bg-white rounded-xl border border-line p-6 sm:p-10 shadow-sm text-ink text-sm sm:text-[15px] leading-relaxed space-y-8">
+      
+      <div>
+        <p class="text-xs text-muted mb-3 font-semibold">Last updated: 29 September 2026</p>
+        <p class="text-ink">
+          This Privacy Policy explains how {{ site.company_name }} collects, uses and protects your information when you use our Website or contact us.
+        </p>
+      </div>
+
+      <!-- Quick Summary Box -->
+      <div class="bg-cream border-l-4 border-copper p-4 sm:p-5 rounded-r-lg text-sm text-ink leading-relaxed">
+        <strong class="font-bold text-brand-800">In short:</strong> We collect only the details you give us and basic Website data. We use them to answer your enquiry, process orders and (only if you agree) send updates. We do not sell your data, and you can ask us to correct or delete it or stop messages at any time.
+      </div>
+
+      <!-- Table of Contents -->
+      <nav class="border border-line rounded-lg p-5 bg-[#faf9f6]">
+        <strong class="text-xs uppercase tracking-wider text-ink font-bold block mb-3">Contents</strong>
+        <ol class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs sm:text-sm list-none p-0 m-0">
+          <li><a href="#scope" class="text-brand-600 hover:text-copper-600 font-medium transition-colors">1. Scope and Who We Are</a></li>
+          <li><a href="#collect" class="text-brand-600 hover:text-copper-600 font-medium transition-colors">2. Information We Collect</a></li>
+          <li><a href="#purpose" class="text-brand-600 hover:text-copper-600 font-medium transition-colors">3. Why We Use Your Information</a></li>
+          <li><a href="#basis" class="text-brand-600 hover:text-copper-600 font-medium transition-colors">4. Consent and Legal Basis</a></li>
+          <li><a href="#sharing" class="text-brand-600 hover:text-copper-600 font-medium transition-colors">5. Who We Share Data With</a></li>
+          <li><a href="#ads" class="text-brand-600 hover:text-copper-600 font-medium transition-colors">6. Cookies, Pixels and Advertising</a></li>
+          <li><a href="#retention" class="text-brand-600 hover:text-copper-600 font-medium transition-colors">7. How Long We Keep Data</a></li>
+          <li><a href="#security" class="text-brand-600 hover:text-copper-600 font-medium transition-colors">8. Data Security</a></li>
+          <li><a href="#rights" class="text-brand-600 hover:text-copper-600 font-medium transition-colors">9. Your Rights and Choices</a></li>
+          <li><a href="#children" class="text-brand-600 hover:text-copper-600 font-medium transition-colors">10. Children</a></li>
+          <li><a href="#transfer" class="text-brand-600 hover:text-copper-600 font-medium transition-colors">11. Data Location &amp; Third Parties</a></li>
+          <li><a href="#changes" class="text-brand-600 hover:text-copper-600 font-medium transition-colors">12. Changes to This Policy</a></li>
+          <li><a href="#grievance" class="text-brand-600 hover:text-copper-600 font-medium transition-colors">13. Contact &amp; Grievance Officer</a></li>
+        </ol>
+      </nav>
+
+      <!-- Section 1 -->
+      <section id="scope" class="pt-6 border-t border-line scroll-mt-24 space-y-3">
+        <h2 class="text-lg sm:text-xl font-bold text-brand-800">1. Scope and Who We Are</h2>
+        <p class="text-muted">
+          {{ site.company_name }} ("we", "us", "our") is a manufacturer and supplier of stainless steel houseware (containers, bowls and related products) at {{ site.address|default:"A-92, Wazirpur Industrial Area, Delhi, India" }}. This policy applies to our Website, enquiry forms, WhatsApp/phone/email communication, and social media advertising.
+        </p>
+        <p class="text-muted">
+          For the purposes of the Digital Personal Data Protection Act, 2023 ("DPDP Act"), {{ site.company_name }} acts as the <em>Data Fiduciary</em> for the personal data you provide.
+        </p>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="collect" class="pt-6 border-t border-line scroll-mt-24 space-y-3">
+        <h2 class="text-lg sm:text-xl font-bold text-brand-800">2. Information We Collect</h2>
+        <div class="overflow-x-auto border border-line rounded-lg my-3 shadow-sm">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-cream border-b border-line text-ink uppercase tracking-wider font-bold text-[0.72rem]">
+              <tr>
+                <th class="px-4 py-3">Category</th>
+                <th class="px-4 py-3">Examples</th>
+                <th class="px-4 py-3">How we get it</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-line text-muted">
+              <tr>
+                <td class="px-4 py-3 font-semibold text-ink">Identity &amp; contact</td>
+                <td class="px-4 py-3">Full name, company/shop name, mobile/WhatsApp number, email, city</td>
+                <td class="px-4 py-3">Enquiry form, WhatsApp, phone, ad lead forms</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-ink">Business/order details</td>
+                <td class="px-4 py-3">Products of interest, estimated quantity, order history, GST number</td>
+                <td class="px-4 py-3">Your enquiries and orders</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-ink">Communication records</td>
+                <td class="px-4 py-3">Messages, call notes, quotations sent</td>
+                <td class="px-4 py-3">WhatsApp, email, phone</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-ink">Technical data</td>
+                <td class="px-4 py-3">IP address, browser, device, pages viewed, time spent, referral source</td>
+                <td class="px-4 py-3">Automatically via cookies and tracking tags</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-ink">Consent records</td>
+                <td class="px-4 py-3">Whether and when you submitted communication consent</td>
+                <td class="px-4 py-3">Enquiry forms</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-muted text-xs sm:text-sm">
+          We do not intentionally collect sensitive personal data such as financial account details, passwords, or government IDs through the Website. Payment is completed through standard B2B invoicing channels or direct commercial payment methods; we do not collect card details online.
+        </p>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="purpose" class="pt-6 border-t border-line scroll-mt-24 space-y-3">
+        <h2 class="text-lg sm:text-xl font-bold text-brand-800">3. Why We Use Your Information</h2>
+        <ul class="list-disc pl-5 space-y-2 text-muted text-xs sm:text-sm">
+          <li><strong class="text-ink">Responding to you:</strong> answering enquiries, sending quotations, product catalogues and pricing.</li>
+          <li><strong class="text-ink">Orders and accounts:</strong> confirming orders, manufacturing schedules, dispatch logistics, and GST invoicing.</li>
+          <li><strong class="text-ink">Marketing (only with consent):</strong> WhatsApp, SMS, or email updates about new houseware products, bulk pricing, and seasonal supply schemes.</li>
+          <li><strong class="text-ink">Advertising and analytics:</strong> measuring website performance and delivering relevant advertisements across search and social media channels.</li>
+          <li><strong class="text-ink">Security and fraud prevention:</strong> safeguarding the Website, forms, and email infrastructure against bot spam and abuse.</li>
+          <li><strong class="text-ink">Legal compliance:</strong> adhering to statutory tax, corporate, and regulatory reporting obligations.</li>
+        </ul>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="basis" class="pt-6 border-t border-line scroll-mt-24 space-y-3">
+        <h2 class="text-lg sm:text-xl font-bold text-brand-800">4. Consent and Legal Basis</h2>
+        <p class="text-muted">
+          We process your personal data based on your <strong class="text-ink">consent</strong> (provided when submitting forms or requesting pricing), to fulfill your <strong class="text-ink">business inquiry or order</strong>, and to satisfy applicable <strong class="text-ink">statutory laws</strong>. You may withdraw consent at any time; this will not invalidate processing conducted prior to withdrawal or data retained for obligatory tax and accounting records.
+        </p>
+      </section>
+
+      <!-- Section 5 -->
+      <section id="sharing" class="pt-6 border-t border-line scroll-mt-24 space-y-3">
+        <h2 class="text-lg sm:text-xl font-bold text-brand-800">5. Who We Share Data With</h2>
+        <p class="text-muted">We <strong class="text-ink">never sell</strong> your personal information. We disclose data solely on a need-to-know basis to:</p>
+        <ul class="list-disc pl-5 space-y-1.5 text-muted text-xs sm:text-sm">
+          <li><strong class="text-ink">Service providers:</strong> hosting providers, messaging partners (WhatsApp API, transactional email), logistics and analytics providers bound by confidentiality terms.</li>
+          <li><strong class="text-ink">Advertising platforms:</strong> Google, Meta, and allied networks via tracking tags and pixels (see Section 6).</li>
+          <li><strong class="text-ink">Professional advisors:</strong> chartered accountants, auditors, and legal counsel.</li>
+          <li><strong class="text-ink">Law enforcement &amp; regulatory authorities:</strong> when mandatory under applicable Indian law or court summons.</li>
+        </ul>
+      </section>
+
+      <!-- Section 6 -->
+      <section id="ads" class="pt-6 border-t border-line scroll-mt-24 space-y-3">
+        <h2 class="text-lg sm:text-xl font-bold text-brand-800">6. Cookies, Pixels and Advertising</h2>
+        <p class="text-muted">
+          We utilize essential, analytics, and advertising cookies to operate the site smoothly and gauge promotional effectiveness.
+        </p>
+        <ul class="list-disc pl-5 space-y-1 text-muted text-xs sm:text-sm">
+          <li><strong class="text-ink">Essential cookies:</strong> preserve basic website functionality.</li>
+          <li><strong class="text-ink">Analytics cookies:</strong> provide aggregated data on traffic patterns and popular products.</li>
+          <li><strong class="text-ink">Advertising pixels:</strong> measure return on advertising spend and support tailored promotions across social networks.</li>
+        </ul>
+        <p class="text-muted text-xs sm:text-sm">
+          You may restrict or purge cookies through your browser settings.
+        </p>
+      </section>
+
+      <!-- Section 7 -->
+      <section id="retention" class="pt-6 border-t border-line scroll-mt-24 space-y-3">
+        <h2 class="text-lg sm:text-xl font-bold text-brand-800">7. How Long We Keep Data</h2>
+        <ul class="list-disc pl-5 space-y-1.5 text-muted text-xs sm:text-sm">
+          <li><strong class="text-ink">Inquiry data without order completion:</strong> retained up to 24 months, unless earlier deletion is requested.</li>
+          <li><strong class="text-ink">Tax and invoice records:</strong> preserved for the statutory timeframe required under Indian taxation and corporate regulations.</li>
+          <li><strong class="text-ink">Marketing contacts:</strong> retained until consent is revoked.</li>
+          <li><strong class="text-ink">Server logs:</strong> routinely cleared within 12 months.</li>
+        </ul>
+      </section>
+
+      <!-- Section 8 -->
+      <section id="security" class="pt-6 border-t border-line scroll-mt-24 space-y-3">
+        <h2 class="text-lg sm:text-xl font-bold text-brand-800">8. Data Security</h2>
+        <p class="text-muted">
+          We maintain HTTPS encryption across our domain, restricted administrative access, and secure hosting environments. While no internet-facing architecture is impenetrable, we implement industry-standard safeguards and will promptly notify affected users and competent authorities in the event of an actionable data breach.
+        </p>
+      </section>
+
+      <!-- Section 9 -->
+      <section id="rights" class="pt-6 border-t border-line scroll-mt-24 space-y-3">
+        <h2 class="text-lg sm:text-xl font-bold text-brand-800">9. Your Rights and Choices</h2>
+        <p class="text-muted">Under the DPDP Act and relevant provisions, you hold the right to:</p>
+        <ul class="list-disc pl-5 space-y-1.5 text-muted text-xs sm:text-sm">
+          <li><strong class="text-ink">Access &amp; review:</strong> request a summary of personal information we process.</li>
+          <li><strong class="text-ink">Correction:</strong> rectify inaccurate or outdated details.</li>
+          <li><strong class="text-ink">Erasure:</strong> request deletion where statutory retention is not compulsory.</li>
+          <li><strong class="text-ink">Revoke consent:</strong> withdraw your permission for commercial updates.</li>
+          <li><strong class="text-ink">Grievance redressal:</strong> submit privacy complaints directly to our designated officer.</li>
+        </ul>
+      </section>
+
+      <!-- Section 10 - 12 -->
+      <section id="children" class="pt-6 border-t border-line scroll-mt-24 space-y-3">
+        <h2 class="text-lg sm:text-xl font-bold text-brand-800">10. Children</h2>
+        <p class="text-muted">Our services are intended exclusively for commercial entities and individuals aged 18 and older. We do not deliberately harvest data from minors.</p>
+      </section>
+
+      <section id="transfer" class="pt-6 border-t border-line scroll-mt-24 space-y-3">
+        <h2 class="text-lg sm:text-xl font-bold text-brand-800">11. Data Location and Third-Party Services</h2>
+        <p class="text-muted">Certain technical service providers (analytics, cloud compute, messaging APIs) may process information on infrastructure located outside India under standard data protection obligations.</p>
+      </section>
+
+      <section id="changes" class="pt-6 border-t border-line scroll-mt-24 space-y-3">
+        <h2 class="text-lg sm:text-xl font-bold text-brand-800">12. Changes to This Policy</h2>
+        <p class="text-muted">We may periodically revise this document to reflect operational changes or statutory updates. Revisions take effect immediately upon publication on this page.</p>
+      </section>
+
+      <!-- Section 13: Grievance Contact -->
+      <section id="grievance" class="pt-6 border-t border-line scroll-mt-24 space-y-3">
+        <h2 class="text-lg sm:text-xl font-bold text-brand-800">13. Contact and Grievance Officer</h2>
+        <p class="text-muted">For privacy queries, data requests, or complaints, please reach out to our grievance team:</p>
+        
+        <div class="bg-cream border border-copper/40 p-5 rounded-lg text-xs sm:text-sm space-y-1 text-ink mt-3">
+          <p><strong class="text-brand-800 font-bold">Entity:</strong> {{ site.company_name }}</p>
+          <p><strong class="text-brand-800 font-bold">Address:</strong> {{ site.address|default:"A-92, Wazirpur Industrial Area, Delhi, India" }}</p>
+          {% if site.phone %}
+            <p><strong class="text-brand-800 font-bold">WhatsApp / Phone:</strong> <a href="tel:{{ site.phone }}" class="text-brand-600 hover:text-copper-600 transition-colors">{{ site.phone }}</a></p>
+          {% endif %}
+          {% if site.email %}
+            <p><strong class="text-brand-800 font-bold">Email:</strong> <a href="mailto:{{ site.email }}" class="text-brand-600 hover:text-copper-600 transition-colors">{{ site.email }}</a></p>
+          {% endif %}
+          {% if site.msme_number %}
+            <p><strong class="text-brand-800 font-bold">MSME Number:</strong> {{ site.msme_number }}</p>
+          {% endif %}
+          {% if site.gst_number %}
+            <p><strong class="text-brand-800 font-bold">GST Number:</strong> {{ site.gst_number }}</p>
+          {% endif %}
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

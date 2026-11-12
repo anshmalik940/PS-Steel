@@ -1,0 +1,30 @@
+
+:root{--bg:#f7f8f6;--card:#ffffff;--text:#1d2420;--muted:#55605a;--accent:#1b2620;--accent2:#2f6b4f;--line:#dfe4e0;--sum:#eaf3ee;--mark:#fff3a3}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121815;--card:#1a221e;--text:#e8ece9;--muted:#a3ada7;--accent:#dfe9e3;--accent2:#7fc9a3;--line:#2c3630;--sum:#1e2c25;--mark:#6b5d12}}
+:root[data-theme="dark"]{--bg:#121815;--card:#1a221e;--text:#e8ece9;--muted:#a3ada7;--accent:#dfe9e3;--accent2:#7fc9a3;--line:#2c3630;--sum:#1e2c25;--mark:#6b5d12}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.7}
+.legal-header{background:#1b2620;color:#fff;padding:28px 20px}
+.legal-header .in{max-width:860px;margin:0 auto}
+.legal-header a{color:#cfe6d9;text-decoration:none;font-size:14px}
+.legal-header h1{margin:8px 0 4px;font-size:clamp(26px,5vw,38px)}
+.legal-header p{margin:0;opacity:.8;font-size:14px}
+div.legal{max-width:860px;margin:24px auto 60px;padding:28px clamp(18px,4vw,40px);background:var(--card);border:1px solid var(--line);border-radius:14px}
+.legal h1{color:var(--accent)}
+.legal h2{font-size:20px;margin:0 0 8px;color:var(--accent)}
+.legal section{padding:18px 0;border-top:1px solid var(--line);scroll-margin-top:16px}
+.legal p,.legal li{color:var(--text)}
+.legal ul,.legal ol{padding-left:22px}
+.legal a{color:var(--accent2)}
+.legal table{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0;display:block;overflow-x:auto}
+.legal th,.legal td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+.legal th{background:var(--sum)}
+.summary{background:var(--sum);border-left:4px solid var(--accent2);padding:14px 16px;border-radius:8px;margin:16px 0}
+.toc{border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:16px 0}
+.toc ol{margin:8px 0 0;columns:2;column-gap:28px;list-style:none;padding:0;font-size:14px}
+@media(max-width:640px){.toc ol{columns:1}}
+.toc li{padding:2px 0;break-inside:avoid}
+.contact-box{margin-top:24px;padding:16px;border:1px dashed var(--accent2);border-radius:10px}
+mark{background:var(--mark);color:inherit;padding:0 4px;border-radius:3px}
+.meta{color:var(--muted);font-size:14px}
+footer.legal-foot{text-align:center;color:var(--muted);font-size:13px;padding:0 20px 30px}

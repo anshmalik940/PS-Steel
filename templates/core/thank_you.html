@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Thank You | {{ site.company_name }}{% endblock %}
+{% block meta_description %}Thank you for your enquiry.{% endblock %}
+
+{% block content %}
+{# --- HERO CONFIRMATION HEADER --- #}
+<section class="relative overflow-hidden bg-gradient-to-br from-brand-800 to-brand-900 text-white py-14 md:py-20 border-b border-white/10">
+  <!-- Decorative ambient circles -->
+  <div class="pointer-events-none absolute -right-20 -bottom-28 w-80 h-80 rounded-full border border-copper/15 hidden md:block"></div>
+  <div class="pointer-events-none absolute right-16 top-10 w-44 h-44 rounded-full bg-copper/10 blur-3xl"></div>
+
+  <div class="w-full max-w-[1200px] mx-auto px-6 relative z-10">
+    <p class="text-copper text-xs tracking-[0.24em] uppercase font-extrabold mb-3">Enquiry Received</p>
+    <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[1.08] mb-4">
+      Thank <span class="text-copper">You</span>
+    </h1>
+    <p class="text-white/75 text-sm sm:text-base leading-relaxed max-w-xl">
+      Our team will contact you shortly on the number you provided.
+    </p>
+  </div>
+</section>
+
+{# --- ACTIONS SECTION --- #}
+<section class="py-16 md:py-20 bg-white">
+  <div class="w-full max-w-[1200px] mx-auto px-6">
+    <div class="bg-cream p-8 sm:p-12 rounded-xl border border-line flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-sm">
+      <div class="space-y-1">
+        <h2 class="text-xl sm:text-2xl font-bold text-ink tracking-tight">Need immediate assistance?</h2>
+        <p class="text-muted text-xs sm:text-sm">Reach out directly on WhatsApp or explore our product range in the meantime.</p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3">
+        {% if site.whatsapp_number %}
+          <a class="btn btn-primary" href="https://wa.me/{{ site.whatsapp_number }}"
+             target="_blank" rel="noopener">Chat on WhatsApp</a>
+        {% endif %}
+        <a class="btn btn-outline hover:bg-brand-600 hover:text-white transition-colors" href="{% url 'product_list' %}">Browse Products</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+{% if fire_conversion %}
+<script>
+  if (window.gtag) gtag('event', 'generate_lead');
+  if (window.fbq) fbq('track', 'Lead');
+</script>
+{% endif %}
+{% endblock %}

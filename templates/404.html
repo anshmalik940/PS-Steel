@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Page Not Found | {{ site.company_name }}{% endblock %}
+
+{% block content %}
+<section class="page-head">
+  <div class="wrap">
+    <h1>Page Not Found</h1>
+    <p>The page you were looking for does not exist.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap"><a class="btn btn-primary" href="{% url 'home' %}">Back to Home</a></div>
+</section>
+{% endblock %}

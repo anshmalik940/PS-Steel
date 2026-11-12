@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Us | {{ site.company_name }}{% endblock %}
+{% block meta_description %}{{ site.company_name }} is a Delhi-based manufacturer of stainless steel containers and bowls, supplying wholesalers and distributors in bulk across India.{% endblock %}
+
+{% block content %}
+{# --- PAGE HERO HEADER --- #}
+<section class="relative overflow-hidden bg-gradient-to-br from-brand-800 to-brand-900 text-white py-14 md:py-20 border-b border-white/10">
+  <!-- Subtle ambient glow matching reference mockup -->
+  <div class="pointer-events-none absolute -right-20 -bottom-28 w-80 h-80 rounded-full border border-copper/15 hidden md:block"></div>
+  <div class="pointer-events-none absolute right-16 top-10 w-44 h-44 rounded-full bg-copper/10 blur-3xl"></div>
+
+  <div class="w-full max-w-[1200px] mx-auto px-6 relative z-10">
+    <p class="text-copper text-xs tracking-[0.24em] uppercase font-extrabold mb-3">About Us</p>
+    <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[1.08] mb-4">
+      More Than <span class="text-copper">Steel</span>
+    </h1>
+    <p class="text-white/75 text-sm sm:text-base leading-relaxed max-w-2xl">
+      A Delhi-based manufacturer of stainless steel containers and bowls, supplying
+      wholesalers, distributors and resellers across India.
+    </p>
+  </div>
+</section>
+
+{# --- PROSE & IMAGE SECTION (WHO WE ARE) --- #}
+<section class="py-16 md:py-24 bg-white">
+  <div class="w-full max-w-[1200px] mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      
+      <!-- Copy column -->
+      <div class="lg:col-span-6 max-w-xl">
+        <p class="eyebrow">Who We Are</p>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-ink tracking-tight mb-6">
+          Made in our own unit
+        </h2>
+        <p class="text-muted text-sm sm:text-base leading-relaxed mb-4">
+          <strong class="text-ink font-semibold">{{ site.company_name }}</strong> manufactures stainless steel houseware at its own
+          manufacturing unit in Delhi. Our products are made in-house by skilled
+          workers using good quality material, so the finish and consistency stay
+          the same order after order.
+        </p>
+        <p class="text-muted text-sm sm:text-base leading-relaxed">
+          We make containers and bowls in a range of shapes, sizes and capacities,
+          which lets our buyers stock a full range from a single supplier.
+        </p>
+      </div>
+
+      <!-- Media column with copper accent tag -->
+      <div class="lg:col-span-6 relative">
+        <div class="absolute -top-3 -left-3 w-12 h-1 bg-copper z-10"></div>
+        <div class="rounded-xl overflow-hidden shadow-lg border border-line">
+          <img src="{% static 'img/Stainless Steel Cookware Factory Floor.png' %}" 
+               alt="Stainless steel containers and bowls in several sizes"
+               class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-500"
+               loading="lazy">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{# --- HOW WE SUPPLY (BULK BUYERS GRID) --- #}
+<section class="py-16 md:py-24 bg-cream border-t border-line">
+  <div class="w-full max-w-[1200px] mx-auto px-6">
+    <div class="max-w-2xl mb-12">
+      <p class="eyebrow">How We Supply</p>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-ink tracking-tight">
+        Built for bulk buyers
+      </h2>
+    </div>
+
+    <!-- Clean tiled info-grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <div class="bg-white p-6 sm:p-7 rounded-lg border border-line shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-8 h-1 bg-copper-600 mb-4"></div>
+        <h3 class="text-base font-bold text-ink mb-2">Sold by weight</h3>
+        <p class="text-muted text-xs sm:text-sm leading-relaxed">
+          Orders are supplied by weight rather than by piece — commonly in
+          20 kg, 50 kg and 100 kg lots — which keeps bulk pricing simple.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 sm:p-7 rounded-lg border border-line shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-8 h-1 bg-copper-600 mb-4"></div>
+        <h3 class="text-base font-bold text-ink mb-2">Competitive pricing</h3>
+        <p class="text-muted text-xs sm:text-sm leading-relaxed">
+          Because we manufacture in-house, we are able to offer pricing that
+          compares well with the market for the same quality.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 sm:p-7 rounded-lg border border-line shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-8 h-1 bg-copper-600 mb-4"></div>
+        <h3 class="text-base font-bold text-ink mb-2">Pan India supply</h3>
+        <p class="text-muted text-xs sm:text-sm leading-relaxed">
+          We supply wholesalers, distributors and resellers across India with reliable logistics partners.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 sm:p-7 rounded-lg border border-line shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-8 h-1 bg-copper-600 mb-4"></div>
+        <h3 class="text-base font-bold text-ink mb-2">Wholesale only</h3>
+        <p class="text-muted text-xs sm:text-sm leading-relaxed">
+          We work with businesses on bulk orders. We do not sell single pieces to retail customers.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{# --- BOTTOM CTA BAND --- #}
+<section class="bg-brand-700 py-10 md:py-12 text-white">
+  <div class="w-full max-w-[1200px] mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+    <div>
+      <h2 class="text-xl sm:text-2xl font-bold mb-1 text-white">Want to stock our products?</h2>
+      <p class="text-xs sm:text-sm text-white/70">Tell us what you need and our team will share pricing and supply options.</p>
+    </div>
+    <button type="button" class="btn btn-light whitespace-nowrap js-open-modal">Enquire Now</button>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% comment %}
+Reusable inquiry form. Include it anywhere with:
+  {% include "partials/_inquiry_form.html" with type="bulk" product=product.title %}
+`type` is bulk (default), reseller or contact. `product` pre-fills the product field.
+{% endcomment %}
+<form method="post" action="{% url 'submit_inquiry' %}" class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full text-left">
+  {% csrf_token %}
+  <input type="hidden" name="inquiry_type" value="{{ type|default:'bulk' }}">
+  
+  {# Honeypot: must stay hidden from humans #}
+  <input type="text" name="website" class="absolute -left-[9999px] opacity-0 pointer-events-none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+  <div>
+    <label for="id_full_name_{{ type|default:'bulk' }}" class="block text-[0.72rem] font-bold uppercase tracking-wider text-ink mb-1.5">
+      Full Name *
+    </label>
+    <input id="id_full_name_{{ type|default:'bulk' }}" type="text" name="full_name"
+           class="w-full px-3.5 py-2.5 bg-white border border-line rounded-md text-sm text-ink placeholder:text-muted/60 focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/15 transition-all"
+           autocomplete="name" required>
+  </div>
+
+  <div>
+    <label for="id_company_{{ type|default:'bulk' }}" class="block text-[0.72rem] font-bold uppercase tracking-wider text-ink mb-1.5">
+      Company / Shop Name
+    </label>
+    <input id="id_company_{{ type|default:'bulk' }}" type="text" name="company_name"
+           class="w-full px-3.5 py-2.5 bg-white border border-line rounded-md text-sm text-ink placeholder:text-muted/60 focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/15 transition-all"
+           autocomplete="organization">
+  </div>
+
+  <div>
+    <label for="id_phone_{{ type|default:'bulk' }}" class="block text-[0.72rem] font-bold uppercase tracking-wider text-ink mb-1.5">
+      Mobile / WhatsApp *
+    </label>
+    <input id="id_phone_{{ type|default:'bulk' }}" type="tel" name="phone"
+           class="w-full px-3.5 py-2.5 bg-white border border-line rounded-md text-sm text-ink placeholder:text-muted/60 focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/15 transition-all"
+           autocomplete="tel" inputmode="tel" required>
+  </div>
+
+  <div>
+    <label for="id_email_{{ type|default:'bulk' }}" class="block text-[0.72rem] font-bold uppercase tracking-wider text-ink mb-1.5">
+      Email
+    </label>
+    <input id="id_email_{{ type|default:'bulk' }}" type="email" name="email"
+           class="w-full px-3.5 py-2.5 bg-white border border-line rounded-md text-sm text-ink placeholder:text-muted/60 focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/15 transition-all"
+           autocomplete="email">
+  </div>
+
+  <div>
+    <label for="id_city_{{ type|default:'bulk' }}" class="block text-[0.72rem] font-bold uppercase tracking-wider text-ink mb-1.5">
+      City
+    </label>
+    <input id="id_city_{{ type|default:'bulk' }}" type="text" name="city"
+           class="w-full px-3.5 py-2.5 bg-white border border-line rounded-md text-sm text-ink placeholder:text-muted/60 focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/15 transition-all"
+           autocomplete="address-level2">
+  </div>
+
+  <div>
+    <label for="id_qty_{{ type|default:'bulk' }}" class="block text-[0.72rem] font-bold uppercase tracking-wider text-ink mb-1.5">
+      Estimated Quantity
+    </label>
+    <input id="id_qty_{{ type|default:'bulk' }}" type="text" name="quantity"
+           class="w-full px-3.5 py-2.5 bg-white border border-line rounded-md text-sm text-ink placeholder:text-muted/60 focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/15 transition-all"
+           placeholder="e.g. 50 kg">
+  </div>
+
+  <div class="sm:col-span-2">
+    <label for="id_product_{{ type|default:'bulk' }}" class="block text-[0.72rem] font-bold uppercase tracking-wider text-ink mb-1.5">
+      Product
+    </label>
+    <input id="id_product_{{ type|default:'bulk' }}" type="text" name="product_interest"
+           class="w-full px-3.5 py-2.5 bg-white border border-line rounded-md text-sm text-ink placeholder:text-muted/60 focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/15 transition-all"
+           value="{{ product|default:'' }}">
+  </div>
+
+  <div class="sm:col-span-2">
+    <label for="id_message_{{ type|default:'bulk' }}" class="block text-[0.72rem] font-bold uppercase tracking-wider text-ink mb-1.5">
+      Message
+    </label>
+    <textarea id="id_message_{{ type|default:'bulk' }}" name="message" rows="3"
+              class="w-full px-3.5 py-2.5 bg-white border border-line rounded-md text-sm text-ink placeholder:text-muted/60 focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/15 transition-all resize-y min-h-[96px]"></textarea>
+  </div>
+
+  <div class="sm:col-span-2 pt-1">
+    <button type="submit" class="btn btn-primary">Send Enquiry</button>
+  </div>
+
+  <p class="sm:col-span-2 text-xs text-muted leading-relaxed mt-1">
+    We only use your details to respond to this enquiry. See our
+    <a href="{% url 'privacy' %}" class="text-brand-600 font-semibold underline hover:text-copper-600 transition-colors">Privacy Policy</a>.
+  </p>
+</form>

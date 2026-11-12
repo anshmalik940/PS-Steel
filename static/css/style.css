@@ -1,0 +1,133 @@
+/* ===========================================================================
+   PS Kalash Steel — Core System Styles
+   Tailwind handles layout & responsive grid; this file handles fonts & buttons.
+   =========================================================================== */
+
+/* --- fonts --- */
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/manrope-latin-400-normal.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/manrope-latin-500-normal.woff2") format("woff2");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/manrope-latin-700-normal.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/manrope-latin-800-normal.woff2") format("woff2");
+  font-weight: 800; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Parisienne";
+  src: url("../fonts/parisienne-latin-400-normal.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+
+/* --- tokens --- */
+:root {
+  --green-900: #121a16;
+  --green-800: #1b2620;
+  --green-700: #253328;
+  --green-600: #3a5245;
+  --green-500: #4a6555;
+  --copper:    #c9a87f;
+  --copper-600:#a67c4a;
+  --cream:     #f5f2ec;
+  --card:      #ffffff;
+  --ink:       #171a18;
+  --body:      #434944;
+  --muted:     #6b716c;
+  --line:      #e0dbd1;
+  --line-dark: rgba(255, 255, 255, 0.13);
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --font-script: "Parisienne", cursive;
+  --radius:    10px;
+  --radius-sm: 6px;
+  --shadow-sm: 0 1px 2px rgba(18, 26, 22, 0.05);
+  --shadow:    0 14px 40px -12px rgba(18, 26, 22, 0.18);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--body);
+  background: var(--card);
+}
+
+/* --- typography & common helpers --- */
+.eyebrow {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--copper-600);
+}
+.script { font-family: var(--font-script); }
+
+/* --- buttons & animated chevron glyph --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.85em 1.5em;
+  border: 1px solid var(--green-600);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--green-600);
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.btn::after {
+  content: "";
+  width: 0.8em; height: 0.8em;
+  background: currentColor;
+  transition: transform 0.2s ease;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.btn:hover::after { transform: translateX(3px); }
+.btn.no-arrow::after { content: none; }
+.btn-primary { background: var(--green-600); border-color: var(--green-600); color: #fff; }
+.btn-primary:hover { background: var(--green-700); border-color: var(--green-700); }
+.btn-outline:hover { background: var(--green-600); color: #fff; }
+.btn-light { border-color: rgba(255,255,255,0.45); color: #fff; }
+.btn-light:hover { background: #fff; color: var(--green-800); border-color: #fff; }
+
+/* Product number label on catalog cards */
+.card-num {
+  position: absolute;
+  top: 0; right: 0;
+  padding: 6px 12px;
+  background: var(--copper);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.75rem;
+  border-bottom-left-radius: var(--radius);
+}
+
+.card-link {
+  border-bottom: 1.5px solid var(--copper-600);
+  padding-bottom: 2px;
+}
+
+/* Floating WhatsApp button */
+.wa-float {
+  position: fixed; right: 20px; bottom: 20px; z-index: 40;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 50px; height: 50px; border-radius: 50%;
+  background: #25d366; color: #fff; box-shadow: var(--shadow);
+}
+body.modal-open { overflow: hidden; }

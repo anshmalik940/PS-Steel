@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | {{ site.company_name }}{% endblock %}
+{% block meta_description %}Contact {{ site.company_name }} for bulk orders of stainless steel containers and bowls — pricing, sizes and supply options.{% endblock %}
+
+{% block content %}
+{# --- PAGE HERO HEADER --- #}
+<section class="relative overflow-hidden bg-gradient-to-br from-brand-800 to-brand-900 text-white py-14 md:py-20 border-b border-white/10">
+  <!-- Subtle decorative ambient accents -->
+  <div class="pointer-events-none absolute -right-20 -bottom-28 w-80 h-80 rounded-full border border-copper/15 hidden md:block"></div>
+  <div class="pointer-events-none absolute right-16 top-10 w-44 h-44 rounded-full bg-copper/10 blur-3xl"></div>
+
+  <div class="w-full max-w-[1200px] mx-auto px-6 relative z-10">
+    <p class="text-copper text-xs tracking-[0.24em] uppercase font-extrabold mb-3">Contact</p>
+    <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[1.08] mb-4">
+      Get in Touch
+    </h1>
+    <p class="text-white/75 text-sm sm:text-base leading-relaxed max-w-2xl">
+      For bulk orders, pricing and supply options. We work with businesses on wholesale quantities.
+    </p>
+  </div>
+</section>
+
+{# --- MAIN CONTACT SECTION --- #}
+<section class="py-16 md:py-24 bg-white">
+  <div class="w-full max-w-[1200px] mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+      
+      <!-- Left Column: Contact Details -->
+      <div class="lg:col-span-5 relative">
+        <span class="text-copper-600 text-xs font-extrabold uppercase tracking-[0.22em] mb-3 block">Reach Us</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight mb-6">Contact Details</h2>
+
+        <ul class="border-t border-line divide-y divide-line text-sm leading-relaxed">
+          {% if site.address %}
+            <li class="grid grid-cols-[100px_1fr] sm:grid-cols-[120px_1fr] gap-4 py-4">
+              <strong class="text-xs uppercase tracking-wider text-ink font-bold pt-0.5">Address</strong>
+              <span class="text-muted">{{ site.address|linebreaksbr }}</span>
+            </li>
+          {% endif %}
+          {% if site.phone %}
+            <li class="grid grid-cols-[100px_1fr] sm:grid-cols-[120px_1fr] gap-4 py-4 items-center">
+              <strong class="text-xs uppercase tracking-wider text-ink font-bold">Phone</strong>
+              <span>
+                <a href="tel:{{ site.phone }}" class="text-brand-600 font-semibold hover:text-copper-600 transition-colors">{{ site.phone }}</a>
+              </span>
+            </li>
+          {% endif %}
+          {% if site.whatsapp_number %}
+            <li class="grid grid-cols-[100px_1fr] sm:grid-cols-[120px_1fr] gap-4 py-4 items-center">
+              <strong class="text-xs uppercase tracking-wider text-ink font-bold">WhatsApp</strong>
+              <span>
+                <a href="https://wa.me/{{ site.whatsapp_number }}" target="_blank" rel="noopener" class="text-brand-600 font-semibold hover:text-copper-600 transition-colors inline-flex items-center gap-1.5">
+                  Message us &rarr;
+                </a>
+              </span>
+            </li>
+          {% endif %}
+          {% if site.email %}
+            <li class="grid grid-cols-[100px_1fr] sm:grid-cols-[120px_1fr] gap-4 py-4 items-center">
+              <strong class="text-xs uppercase tracking-wider text-ink font-bold">Email</strong>
+              <span>
+                <a href="mailto:{{ site.email }}" class="text-brand-600 font-semibold hover:text-copper-600 transition-colors">{{ site.email }}</a>
+              </span>
+            </li>
+          {% endif %}
+          <li class="grid grid-cols-[100px_1fr] sm:grid-cols-[120px_1fr] gap-4 py-4">
+            <strong class="text-xs uppercase tracking-wider text-ink font-bold pt-0.5">Orders</strong>
+            <span class="text-muted">Bulk only, supplied by weight (20 kg / 50 kg / 100 kg)</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right Column: Enquiry Form Card -->
+      <div class="lg:col-span-7 bg-cream p-6 sm:p-10 rounded-xl border border-line shadow-sm">
+        <span class="eyebrow">Direct Inquiry</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight mb-6">Send an Enquiry</h2>
+        {% include "partials/_inquiry_form.html" with type="contact" %}
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

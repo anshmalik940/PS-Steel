@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% block title %}{{ site.company_name }} | Stainless Steel Houseware{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}Bulk stainless steel houseware.{% endblock %}">
+  <link rel="canonical" href="{{ request.build_absolute_uri }}">
+  <meta name="theme-color" content="#1b2620">
+
+  {# --- social sharing --- #}
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+  <meta property="og:site_name" content="{{ site.company_name }}">
+  <meta property="og:title" content="{% block og_title %}{{ site.company_name }} | Stainless Steel Houseware{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}Stainless steel containers and bowls, manufactured in Delhi and supplied in bulk across India.{% endblock %}">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+  <meta property="og:image" content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'img/og-image.jpg' %}{% endblock %}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  {# --- fonts: self-hosted preload --- #}
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="{% static 'fonts/manrope-latin-800-normal.woff2' %}">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="{% static 'fonts/manrope-latin-400-normal.woff2' %}">
+
+  <link rel="icon" href="{% static 'img/favicons/favicon.ico' %}" sizes="any">
+  <link rel="apple-touch-icon" href="{% static 'img/favicons/favicon.ico' %}">
+
+  {# --- Tailwind CSS CDN & Design System Config --- #}
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              900: '#121a16',
+              800: '#1b2620',
+              700: '#253328',
+              600: '#3a5245',
+              500: '#4a6555',
+            },
+            copper: {
+              DEFAULT: '#c9a87f',
+              600: '#a67c4a',
+            },
+            cream: '#f5f2ec',
+            ink: '#171a18',
+            muted: '#6b716c',
+            line: '#e0dbd1',
+            'line-dark': 'rgba(255, 255, 255, 0.13)',
+          },
+          fontFamily: {
+            sans: ['Manrope', 'system-ui', 'sans-serif'],
+            script: ['Parisienne', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+
+  {# Single styles link for fonts and custom button glyphs #}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  {% include "partials/_tracking.html" %}
+  {% block structured_data %}{% endblock %}
+</head>
+<body class="bg-white text-body font-sans antialiased selection:bg-copper selection:text-white">
+  {% include "partials/_header.html" %}
+
+  {% if messages %}
+    <div class="w-full max-w-[1200px] mx-auto px-6 pt-6">
+      {% for message in messages %}
+        <div class="p-4 mb-3 text-sm text-ink bg-[#fdf8f2] border-l-4 border-copper-600 rounded-md shadow-sm">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <main>{% block content %}{% endblock %}</main>
+
+  {% include "partials/_footer.html" %}
+  {% include "partials/_inquiry_modal.html" %}
+
+  {% if site.whatsapp_number %}
+    <a class="wa-float" href="https://wa.me/{{ site.whatsapp_number }}"
+       target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+      <svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39a9.86 9.86 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.64-1.03-5.13-2.9-7A9.82 9.82 0 0 0 12.04 2zm5.8 14.13c-.25.69-1.44 1.32-1.99 1.37-.53.05-1.02.24-3.45-.72-2.9-1.14-4.74-4.1-4.88-4.29-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.09.99-2.37.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.7.79.6.38.92 1.29 3.17 1.4 3.4.12.23.19.5.04.79-.15.29-.23.47-.45.72-.22.25-.47.56-.67.75-.22.21-.45.45-.19.89.26.44 1.16 1.91 2.49 3.09 1.71 1.52 3.15 1.99 3.59 2.21.44.22.7.19.96-.11.26-.29 1.11-1.29 1.4-1.74.29-.44.58-.37.97-.22.39.14 2.48 1.17 2.91 1.38.43.22.71.33.82.51.11.19.11 1.06-.14 1.75z"/>
+      </svg>
+    </a>
+  {% endif %}
+
+  <script src="{% static 'js/main.js' %}" defer></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

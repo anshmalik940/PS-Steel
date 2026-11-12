@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}Products | {{ site.company_name }}{% endblock %}
+{% block meta_description %}Stainless steel containers and bowls in multiple shapes, sizes and capacities, supplied in bulk across India by {{ site.company_name }}.{% endblock %}
+
+{% block content %}
+{# --- PAGE HERO HEADER --- #}
+<section class="relative overflow-hidden bg-gradient-to-br from-brand-800 to-brand-900 text-white py-14 md:py-20 border-b border-white/10">
+  <!-- Subtle decorative ambient accents -->
+  <div class="pointer-events-none absolute -right-20 -bottom-28 w-80 h-80 rounded-full border border-copper/15 hidden md:block"></div>
+  <div class="pointer-events-none absolute right-16 top-10 w-44 h-44 rounded-full bg-copper/10 blur-3xl"></div>
+
+  <div class="w-full max-w-[1200px] mx-auto px-6 relative z-10">
+    <p class="text-copper text-xs tracking-[0.24em] uppercase font-extrabold mb-3">Our Products</p>
+    <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[1.08] mb-4">
+      Simple Products. <span class="text-copper">Stronger Businesses.</span>
+    </h1>
+    <p class="text-white/75 text-sm sm:text-base leading-relaxed max-w-2xl">
+      Made at our own manufacturing unit in Delhi and supplied by weight for bulk orders.
+    </p>
+  </div>
+</section>
+
+{# --- CATALOGUE CONTENT & FILTERS --- #}
+<section class="py-16 md:py-24 bg-white">
+  <div class="w-full max-w-[1200px] mx-auto px-6">
+    
+    <!-- Category Filter Strip -->
+    {% if categories %}
+      <nav class="flex flex-wrap items-center gap-2 mb-10 pb-5 border-b border-line" aria-label="Filter by category">
+        <span class="text-ink text-xs font-extrabold uppercase tracking-widest mr-2 hidden sm:inline">Category:</span>
+        <a href="{% url 'product_list' %}"
+           class="px-4 py-2 rounded-full text-xs font-semibold border transition-all duration-200 {% if not active_category %}bg-brand-600 border-brand-600 text-white shadow-sm{% else %}bg-white border-line text-ink hover:border-brand-600{% endif %}">
+          All
+        </a>
+        {% for c in categories %}
+          <a href="?category={{ c.slug }}"
+             class="px-4 py-2 rounded-full text-xs font-semibold border transition-all duration-200 {% if active_category == c.slug %}bg-brand-600 border-brand-600 text-white shadow-sm{% else %}bg-white border-line text-ink hover:border-brand-600{% endif %}">
+            {{ c.name }}
+          </a>
+        {% endfor %}
+      </nav>
+    {% endif %}
+
+    <!-- Product Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+      {% for p in products %}
+      <article class="flex flex-col bg-white rounded-xl border border-line overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+        <!-- Media Image Container -->
+        <a href="{{ p.get_absolute_url }}" class="block bg-[#eae6df] aspect-[4/3] overflow-hidden">
+          <img src="{{ p.image.url }}" alt="{{ p.title }}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
+        </a>
+        
+        <!-- Card Details -->
+        <div class="p-6 flex flex-col flex-1 justify-between">
+          <div>
+            <p class="text-copper-600 text-[0.68rem] tracking-[0.18em] uppercase font-extrabold mb-1.5">{{ p.category.name }}</p>
+            <h3 class="text-base sm:text-lg font-bold text-ink mb-2">
+              <a href="{{ p.get_absolute_url }}" class="hover:text-brand-600 transition-colors">{{ p.title }}</a>
+            </h3>
+            <p class="text-muted text-xs sm:text-sm line-clamp-3 leading-relaxed mb-6">{{ p.short_description }}</p>
+          </div>
+          
+          <a class="card-link inline-flex items-center text-xs font-bold text-ink hover:text-copper-600 transition-colors self-start" href="{{ p.get_absolute_url }}">
+            View Details &rarr;
+          </a>
+        </div>
+      </article>
+      {% empty %}
+        <div class="col-span-full py-12 text-center text-muted text-sm">
+          No products found in this category.
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+{# --- BOTTOM CTA BAND --- #}
+<section class="bg-brand-700 py-10 md:py-12 text-white">
+  <div class="w-full max-w-[1200px] mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+    <div>
+      <h2 class="text-xl sm:text-2xl font-bold mb-1 text-white">Need Pricing for a Bulk Order?</h2>
+      <p class="text-xs sm:text-sm text-white/70">Share your requirement and our team will get back to you.</p>
+    </div>
+    <button type="button" class="btn btn-light whitespace-nowrap js-open-modal">Enquire Now</button>
+  </div>
+</section>
+{% endblock %}

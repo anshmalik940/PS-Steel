@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+db.sqlite3
+media/
+staticfiles/
+.git/
+.gitignore
+smoke_test.py
+*.log
