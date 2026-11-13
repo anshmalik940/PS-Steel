@@ -9,6 +9,9 @@ class UTMMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
+        if request.path_info == "/healthz/":
+            return self.get_response(request)
+
         utm = {k: request.GET[k][:100] for k in UTM_KEYS if k in request.GET}
         if utm:
             request.session["utm"] = utm
